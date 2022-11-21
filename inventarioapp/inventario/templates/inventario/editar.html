@@ -1,0 +1,14 @@
+<form action= "{% url 'inventario:index' %} " method = "post">
+{% csrf_token %}
+<fieldset>
+    <legend><h1>{{producto.nombre}}</h1></legend>
+    {% if error_message %}
+        <p><strong>{{error_message}}</strong></p>
+    {% endif %}
+        <input 
+        type="text"
+        name="producto_name"
+        >
+</fieldset>
+
+</form>

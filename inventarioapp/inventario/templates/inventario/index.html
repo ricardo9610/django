@@ -1,0 +1,15 @@
+{% if latest_producto_list %}
+
+    <ul>
+    {% for producto  in latest_producto_list %}
+        <li> <a href="{% url 'inventario:editar' producto.id %}">{{producto.nombre}},{{producto.nivel}},{{producto.precio}},{{producto.fecha}},{{producto.stock}}</a> </li>
+        
+    {% endfor %}
+
+    </ul>
+
+{% else %}
+    <p>No esxiste un producto en inventario</p>
+
+
+{% endif %}
